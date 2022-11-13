@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            top: -25px !important;
+            margin: 0px;
+            text-align: -webkit-center;
+            background-color: #0000003b;
+            height: auto;
+        }
+
+        .fonctionPage {
+            position: relative;
+            width: 100%;
+            /* background-color: red; */
+            height: 20px;
+            top: 0px;
+        }
+
+
+
+        .modalPresentationLanceurs {
+            position: relative;
+            /* visibility: hidden; */
+            opacity: 0;
+            top: 0px;
+            width: 60%;
+            text-align: center;
+            backdrop-filter: blur(24px);
+            height: 100%;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* .modalPresentationLanceurs:target {
+            visibility: visible;
+            opacity: 1;
+        } */
+
+        .modal_content_presentationLanceurs {
+            width: 100%;
+            background-color: rgb(112 112 112);
+            height: 97.7%;
+        }
+
+        .modalPresentationLanceurs_close {
+            position: absolute;
+            color: rgb(253, 247, 247);
+            font-weight: bold;
+            font-size: 15px;
+            right: 0px;
+            text-decoration: none;
+            padding: 1px 20px 1px 20px;
+            background-color: rgb(112 112 112);
+            border-radius: 5px 5px 0px 0px;
+        }
+
+        .imageLanceurs {
+            position: relative;
+            margin: 20px 20px 0px 20px;
+            max-inline-size: -webkit-fill-available;
+            border: solid 2px black;
+        }
+
+        .boxDescriptionLanceurs {
+            position: relative;
+            width: auto;
+            height: 59%;
+            background-color: #19477400;
+            margin: 0px 31px 0px 31px;
+        }
+
+        .titreLanceurs {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        h5 {
+            color: rgb(255, 255, 255);
+            font-family: "Roboto Slab", "Times New Roman", serif;
+            font-weight: bold;
+            font-size: 1.7vw;
+            top: 10px;
+        }
+
+        .ulLanceurs {
+            list-style: none;
+            font-size: 1vw;
+            margin-top: 60px;
+            color: white;
+        }
+
+        .ulLanceurs li {
+            display: inline-flex;
+            padding: 5px 10px 5px 10px;
+            border: solid 2px black;
+            border-radius: 20px;
+            background-color: green;
+        }
+
+        .descriptionLanceurs {
+            position: relative;
+            width: 100%;
+            height: auto;
+            /* background-color: #999; */
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .descriptionLanceurs div {
+            position: relative;
+            color: white;
+            font-size: 0.8vw;
+            padding: 10px 0px 10px 0px;
+            font-family: sans-serif;
+        }
+
+        .info {
+            position: relative;
+            display: inline-flex;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .informationLanceurs1,
+        .informationLanceurs2,
+        .informationLanceurs3 {
+            position: relative;
+            color: rgb(255, 255, 255);
+            width: 33%;
+            border-right: solid 2px black;
+        }
+
+        .informationLanceurs1 a,
+        .informationLanceurs2 a,
+        .informationLanceurs3 a {
+            position: relative;
+            margin-bottom: 20px;
+            font-size: 1.3vw;
+            color: white;
+            background-color: #0000ff17;
+            display: block;
+        }
+
+        .informationLanceurs2 {
+            border: none;
+        }
+
+        .informationLanceurs3 {
+            border-left: solid 2px black;
+            border-right: none;
+        }
+
+        .informationLanceurs2 a {
+            background-color: #ffffff17;
+        }
+
+        .informationLanceurs3 a {
+            background-color: #ff000017;
+        }
+
+        .card-body {
+            list-style: none;
+            margin: 0px 20px 0px 20px;
+        }
+
+        .card-body li {
+            position: relative;
+            padding: 20px 5px 20px 5px;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            border-radius: 20px;
+            margin-top: 15px;
+            color: rgb(253, 253, 253);
+        }
+
+        .card-body li b {
+            font-size: 0.7vw;
+            font-weight: bold;
+            font-family: sans-serif;
+            content: "";
+        }
+
+        .card-body li bt {
+            position: relative;
+            top: 7px;
+            color: rgb(255, 255, 255);
+            font-size: 0.8vw;
+            font-family: sans-serif;
+        }
+
+        .info-societe {
+            position: relative;
+            top: 0px;
+            width: 100%;
+            height: auto;
+            border-top: solid 2px black;
+            background-color: #585555;
+        }
+
+        .titre-societe {
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin-bottom: 50px;
+            /* background-color: blue; */
+        }
+
+        .titre-societe div {
+            position: relative;
+            color: rgb(255, 255, 255);
+            font-family: sans-serif;
+            font-size: 1.3vw;
+            font-weight: bold;
+            top: 0%;
+        }
+
+        .titre-societe div:nth-child(2) {
+            font-size: 0.8vw;
+            color: lightskyblue;
+        }
+
+        .descriptionSociete {
+            position: relative;
+            width: auto;
+            height: auto;
+            /* background-color: yellow; */
+            padding: 0px 20px 20px 20px;
+            color: rgb(255, 255, 255);
+            overflow: hidden;
+            font-size: 0.7vw;
+        }
+
+        .descriptionSociete font {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modalPresentationLanceurs">
+        <div class="fonctionPage">
+            <a href="#" class="modalPresentationLanceurs_close" style="text-decoration: none">Fermé ❌</a>
+        </div>
+        <div class="modal_content_presentationLanceurs">
+            <img class="imageLanceurs" src="https://i.imgur.com/rfoiCDv.png">
+            <div class="boxDescriptionLanceurs">
+                <div class="titreLanceurs" translate="no">
+                    <h5>Falcon Heavy</h5>
+                    <ul class="ulLanceurs">
+                        <li translate="yes">Asset</li>
+                        <li translate="yes">Reusable</li>
+                        <li style="background-color: rgb(13, 174, 223)">SpaceX</li>
+                    </ul>
+                </div>
+                <div class="descriptionLanceurs">
+                    <div> The Falcon Heavy is a variant of the Falcon 9 full-Thrust
+                        launcher and consists of a standard Falcon 9 rocket core, with two additional boosters
+                        derived from the first Falcon 9 arrange.
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="informationLanceurs1">
+                        <a class="info_Titre_Description_Specifications">Specifications 📑</a>
+                        <ul class="card-body">
+                            <li><b>Stages</b><br>
+                                <bt>3</bt>
+                            </li>
+                            <li><b>Height</b><br>
+                                <bt>70.0 m</bt>
+                            </li>
+                            <li><b>Diameter</b><br>
+                                <bt>12.2 m</bt>
+                            </li>
+                            <li><b>fairing Diameter</b><br>
+                                <bt>-</bt>
+                            </li>
+                            <li><b>Launch mass</b><br>
+                                <bt>1 400 T</bt>
+                            </li>
+                            <li><b>Thrust</b><br>
+                                <bt>22 819 kN</bt>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="informationLanceurs2">
+                        <a class="info_Titre_Description_Family">Family 🚀</a>
+                        <ul class="card-body">
+                            <li><b>Last name</b><br>
+                                <bt translate="no">Falcon Heavy</bt>
+                            </li>
+                            <li><b>Family</b><br>
+                                <bt translate="no">Falcon</bt>
+                            </li>
+                            <li><b>Variant</b><br>
+                                <bt translate="no">Heavy</bt>
+                            </li>
+                            <li><b>Alias</b><br>
+                                <bt translate="no">―</bt>
+                            </li>
+                            <li><b>Full Name</b><br>
+                                <bt translate="no">Falcon Heavy</bt>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="informationLanceurs3">
+                        <a class="info_Titre_Description_PayloadCapacity">Capacity 📡</a>
+                        <ul class="card-body">
+                            <li><b>Launch cost</b><br>
+                                <bt>90.000.000 $</bt>
+                            </li>
+                            <li><b>Low earth orbit</b><br>
+                                <bt>63 800 kg</bt>
+                            </li>
+                            <li><b>Geostationary transfer orbit</b><br>
+                                <bt>26 700 kg</bt>
+                            </li>
+                            <li><b>Direct geostationary</b><br>
+                                <bt>―</bt>
+                            </li>
+                            <li><b>Sun-synchronous capability</b><br>
+                                <bt>―</bt>
+                            </li>
+                            <li><b>Apogee (Sub-Orbital)</b><br>
+                                <bt>200 km</bt>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="info-societe">
+                <div class="titre-societe">
+                    <div translate="no">SpaceX</div>
+                    <div translate="no">PDG: ELON MUSK</div>
+                </div>
+                <div class="descriptionSociete">Space Exploration Technologies Corp, known as
+                    SpaceX, is an American aerospace manufacturer and services company of
+                    space transport headquartered in Hawthorne, California. It was founded in 2002 by
+                    entrepreneur Elon Musk with the aim of reducing space transportation costs and allowing the
+                    colonization of Mars.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
